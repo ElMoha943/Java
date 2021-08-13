@@ -1,59 +1,24 @@
 package Autos;
 
-public class auto {
-	//ATRIBUTOS
-	private String Color;
-	private String Marca;
-	private double Km;
-	private double Precio;
+public class Auto extends Vehiculo{
 	
-	public auto(String clr, String mar, double kilom, double price){ //CONSTRUCTOR
-		setColor(clr);
-		setMarca(mar);
-		setKm(kilom);
-		Precio=price;
+	private boolean airbag;
+
+	public Auto(String clr, String mar, double kilom, double price, boolean ab) {
+		super(clr, mar, kilom, price);
+		setAirbag(ab);
 	}
 	
-	//GETS & SETS
-	public void setPrecio(double price) { //SET - SETTERS
-		Precio=price;
-	}
-	
-	public double GetPrecio(){ //GETS - GETTERS
-		return Precio;
+	public void tocarBocina() {
+		System.out.print("*Bocina de Auto*");
 	}
 
-	public String getColor() {
-		return Color;
+	public String isAirbag() {
+		if(airbag) return "Si";
+		else return "No";
 	}
 
-	public void setColor(String color) {
-		Color = color;
+	public void setAirbag(boolean airbag) {
+		this.airbag = airbag;
 	}
-
-	public String getMarca() {
-		return Marca;
-	}
-
-	public void setMarca(String marca) {
-		Marca = marca;
-	}
-
-	public double getKm() {
-		return Km;
-	}
-
-	public void setKm(double km) {
-		Km = km;
-	}
-	
-	//METODOS
-		public void TocarBocina() {
-			System.out.print("Bocina");
-		}
 }
-
-//auto fiat = new auto("rojo","fiat",1000,35000)
-//fiat.cambiarPrecio(100);
-//System.out.print(fiat.GetPrecio());
-//Variable = GetPrecio();
